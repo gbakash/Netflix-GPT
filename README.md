@@ -16,7 +16,13 @@ If you are developing a production application, we recommend using TypeScript an
  -npm create vite@latest Netflix_GPT
  -configured Tailwind CSS
  -Header
+ -Routing
  -Login
+ -Form Handling
+ -useRef
+ -setUp firebase
+ -deploy our app into production
+ -create a signup user Acc
 
 # Features
 
