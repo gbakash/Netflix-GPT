@@ -1,15 +1,8 @@
-
-import './App.css'
+import "./App.css";
+import Body from "./components/Body";
 
 function App() {
-
-  return (
-    <>
-      <div>
-        <h1 className='text-red-700 text-3xl font-bold'>Netflix</h1>
-      </div>
-    </>
-  )
+  return <Body />;
 }
 
-export default App
+export default App;

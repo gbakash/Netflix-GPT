@@ -15,11 +15,13 @@ If you are developing a production application, we recommend using TypeScript an
 # Netflix-GPT
  -npm create vite@latest Netflix_GPT
  -configured Tailwind CSS
+ -Header
+ -Login
 
 # Features
 
 -SignUp/SignIn 
--Browse(after authentication)
+ -Browse(after authentication)
     -Header
     -Main Movie
         -Trailer in Background
