@@ -23,6 +23,8 @@ If you are developing a production application, we recommend using TypeScript an
  -setUp firebase
  -deploy our app into production
  -create a signup user Acc
+ -implemented signIn userAPI
+ -created ReduxStore with userSlice
 
 # Features
 
