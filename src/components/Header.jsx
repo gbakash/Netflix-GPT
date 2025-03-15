@@ -45,7 +45,7 @@ const Header = () => {
   }, [dispatch, navigate]);
 
   return (
-    <div className="absolute top-0 left-0 w-full flex items-center justify-between bg-transparent z-50 p-1">
+    <div className="absolute top-0 left-0 w-full flex items-center justify-between bg-gradient-to-b from-black z-50 p-2">
       <img src={logo} alt="logo" className="h-[80px] w-[140px]" />
 
       {user && (

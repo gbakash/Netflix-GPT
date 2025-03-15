@@ -8,11 +8,12 @@ export const DEFAULT_USER_IMG =
   "https://tse3.mm.bing.net/th?id=OIP.kYYbdJhBIh1SEi8MKTPYpgHaHa&pid=Api&P=0&h=180";
 
 export const API_OPTIONS = {
-  method: 'GET',
+  method: "GET",
   headers: {
-    accept: 'application/json',
-    Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwY2I0N2Q1ODZkMDFhODk2ZWY5MmQ0YjZiOTAxYTA0YSIsIm5iZiI6MTc0MTk2NjYyMy4wNDgsInN1YiI6IjY3ZDQ0ZDFmYTJiMThkYmVkZDY1MDEzOSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.3sGyDUahHnZvHUziiPryllv5AfBNt_aVGaqMJGTUZ84'
-  }
+    accept: "application/json",
+    Authorization:
+      "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwY2I0N2Q1ODZkMDFhODk2ZWY5MmQ0YjZiOTAxYTA0YSIsIm5iZiI6MTc0MTk2NjYyMy4wNDgsInN1YiI6IjY3ZDQ0ZDFmYTJiMThkYmVkZDY1MDEzOSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.3sGyDUahHnZvHUziiPryllv5AfBNt_aVGaqMJGTUZ84",
+  },
 };
 
-
+export const IMG_CDN_URL = "https://image.tmdb.org/t/p/w500";

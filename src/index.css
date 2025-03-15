@@ -2,49 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-html, body, #root {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    width: 100%;
-    overflow: hidden; /* Prevents scrolling */
-    background-color: black; /* Ensures a clean background */
+/* Hide scrollbars while allowing scrolling */
+::-webkit-scrollbar {
+  display: none;
 }
 
-/* Ensure the header overlays everything properly */
-.header-container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 50;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), transparent);
-}
-
-/* Make sure the video background fully covers the screen */
-.video-background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    object-fit: cover;
-    z-index: -1;
-}
-
-/* Ensure PrimaryContainer takes full screen height */
-.primary-container {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
-}
-
-/* Adjust VideoTitle positioning */
-.video-title {
-    position: absolute;
-    bottom: 20%;
-    left: 5%;
-    max-width: 40%;
-    color: white;
+* {
+  -ms-overflow-style: none; /* Hide scrollbar for Internet Explorer, Edge */
+  scrollbar-width: none; /* Hide scrollbar for Firefox */
 }
