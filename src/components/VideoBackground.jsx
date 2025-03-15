@@ -3,24 +3,26 @@ import useMovieTrailer from "../hooks/useMovieTrailer";
 import { useSelector } from "react-redux";
 
 const VideoBackground = ({ movieId }) => {
-  useMovieTrailer(movieId); // ✅ Fetch the trailer
+  useMovieTrailer(movieId); // ✅ Fetch trailer
 
   const trailerVideo = useSelector((state) => state.movies?.trailerVideo);
 
   return (
-    <div className=" w-full h-full  ">
+    <div className="relative w-screen h-screen">
       {trailerVideo ? (
-        <div className="absolute object-cover brightness-50 w-screen h-screen">
+        <>
           <iframe
-            className="w-screen aspect-video "
+            className="w-full h-full object-cover"
             src={`https://www.youtube.com/embed/${trailerVideo.key}?autoplay=1&mute=1`}
             title="YouTube video player"
-            allow="autoplay; fullscreen; accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; autoplay"
             referrerPolicy="strict-origin-when-cross-origin"
           ></iframe>
-        </div>
+          {/* Gradient Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
+        </>
       ) : (
-        <p className="text-white">No trailer available</p>
+        <p className="text-white text-center">🚫 No trailer available</p>
       )}
     </div>
   );
