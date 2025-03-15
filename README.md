@@ -25,6 +25,11 @@ If you are developing a production application, we recommend using TypeScript an
  -create a signup user Acc
  -implemented signIn userAPI
  -created ReduxStore with userSlice
+ -registered in TMDB website, created a app and access token
+ -get data from the API for nowPlaying movies
+ -custom Hook for now playing movies
+ -created movieSlice
+ -fetch data for trailer video
 
 # Features
 

@@ -7,15 +7,16 @@ import {
   updateProfile,
 } from "firebase/auth";
 import { auth } from "../utils/firebase";
-import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addUser } from "../utils/userSlice";
+import { useNavigate } from "react-router-dom";
+import { BG_IMG, DEFAULT_USER_IMG } from "../utils/constant";
 
 const Login = () => {
   const [isSignIn, setIsSignIn] = useState(true);
   const [errorMessage, setErrorMessage] = useState(null);
-  const navigate = useNavigate();
   const dispatch = useDispatch();
+  const navigate = useNavigate(); // ✅ Added navigation
 
   const name = useRef(null);
   const email = useRef(null);
@@ -40,46 +41,42 @@ const Login = () => {
 
     try {
       if (!isSignIn) {
-        // Sign-Up logic
+        // **Sign-Up logic**
         const userCredential = await createUserWithEmailAndPassword(
           auth,
           enteredEmail,
           enteredPassword
         );
-        console.log("✅ User Signed Up:", userCredential.user);
 
-        // Wait for user authentication to update
         await updateProfile(userCredential.user, {
-          displayName: enteredName, // Set user’s name
-          photoURL:
-            "https://www.belloflostsouls.net/wp-content/uploads/2023/09/luffy-anime.png", // Default profile image
+          displayName: enteredName,
+          photoURL: DEFAULT_USER_IMG,
         });
 
-        // Fetch updated user details
-        const user = auth.currentUser; // Get latest authenticated user
-        dispatch(
-          addUser({
-            uid: user.uid,
-            email: user.email,
-            displayName: user.displayName,
-            photoURL: user.photoURL, // ✅ Correctly assigned
-          })
-        );
+        const user = auth.currentUser;
+        if (user) {
+          dispatch(
+            addUser({
+              uid: user.uid,
+              email: user.email,
+              displayName: user.displayName,
+              photoURL: DEFAULT_USER_IMG,
+            })
+          );
+        }
 
-        console.log("✅ Profile Updated:", user.displayName);
-        navigate("/browse");
+        navigate("/browse"); // ✅ Redirect after successful sign-up
       } else {
-        // Sign-In logic
+        // **Sign-In logic**
         const userCredential = await signInWithEmailAndPassword(
           auth,
           enteredEmail,
           enteredPassword
         );
-        console.log("✅ User Signed In:", userCredential.user);
-        navigate("/browse");
+
+        navigate("/browse"); // ✅ Redirect after successful sign-in
       }
     } catch (error) {
-      console.error("❌ Firebase Auth Error:", error);
       setErrorMessage(`${error.code} - ${error.message}`);
     }
   };
@@ -97,7 +94,7 @@ const Login = () => {
       {/* Background Image */}
       <img
         className="absolute inset-0 w-full h-full object-cover brightness-50"
-        src="https://assets.nflxext.com/ffe/siteui/vlv3/42a0bce6-fc59-4c1c-b335-7196a59ae9ab/web_auto_scroll/IN-en-20250303-TRIFECTA-5a51a3d1-4e37-441d-bc08-3597ab68c7b1_large.jpg"
+        src={BG_IMG}
         alt="background"
       />
 
