@@ -90,8 +90,6 @@ const Login = () => {
     <div className="relative flex items-center justify-center h-screen">
       {/* Fixed Header */}
       <Header />
-
-      {/* Background Image */}
       <img
         className="absolute inset-0 w-full h-full object-cover brightness-50"
         src={BG_IMG}

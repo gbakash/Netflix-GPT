@@ -4,11 +4,11 @@ import useNowPlayingMovies from "../hooks/useNowPlayingMovies";
 import SecondaryContainer from "./SecondaryContainer";
 import PrimaryContainer from "./PrimaryContainer";
 
+
 const Browse = () => {
   useNowPlayingMovies();
-
   return (
-    <div className="w-screen h-screen overflow-hidden relative">
+    <div>
       <Header />
       <PrimaryContainer />
       <SecondaryContainer />

@@ -7,14 +7,13 @@ const PrimaryContainer = () => {
   const movies = useSelector((state) => state.movies?.nowPlayingMovies);
   if (!movies) return null;
   const mainMovie = movies[0];
-  const { original_title, overview, id } = mainMovie;
+  console.log(mainMovie);
+  const { original_title, overview,id } = mainMovie;
 
   return (
-    <div className="relative w-screen h-screen">
-      <VideoBackground movieId={id} />
-      <div className="absolute inset-0 bg-gradient-to-b from-black/40 to-black/90 flex flex-col justify-end p-10">
-        <VideoTitle title={original_title} overview={overview} />
-      </div>
+    <div>
+      <VideoTitle title={original_title} overview={overview} />
+      <VideoBackground movieId={id}/>
     </div>
   );
 };

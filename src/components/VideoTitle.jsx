@@ -2,15 +2,16 @@ import React from "react";
 
 const VideoTitle = ({ title, overview }) => {
   return (
-    <div className="text-white w-1/2 pl-8">
-      <h1 className="text-4xl font-bold">{title}</h1>
-      <p className="text-lg mt-2">{overview}</p>
-      <div className="mt-4">
-        <button className="bg-red-600 text-white px-6 py-2 rounded-md hover:bg-red-700">
-          Play
+    <div className="absolute top-1/3 left-12 text-white z-10">
+      <h1 className="text-5xl font-bold">{title}</h1>
+      <p className="text-md mt-2 w-1/4">{overview}</p>
+
+      <div className="mt-5">
+        <button className="bg-white  text-black p-3 hover:bg-opacity-50 text-lg px-8 rounded-md bg-opacity-70">
+          ▶️ Play
         </button>
-        <button className="bg-gray-800 text-white px-6 py-2 rounded-md ml-2 hover:bg-gray-700">
-          More Info
+        <button className="mx-2 bg-gray-800 text-white p-3 text-lg px-8 rounded-md bg-opacity-70">
+          ℹ More Info
         </button>
       </div>
     </div>

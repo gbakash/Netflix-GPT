@@ -14,8 +14,12 @@ const Header = () => {
 
   const handleSignOut = () => {
     signOut(auth)
-      .then(() => navigate("/"))
-      .catch(() => navigate("/error"));
+      .then(() => {
+        navigate("/");
+      })
+      .catch(() => {
+        navigate("/error");
+      });
   };
 
   useEffect(() => {
@@ -27,7 +31,7 @@ const Header = () => {
             uid,
             email,
             displayName,
-            photoURL: USER_IMG || DEFAULT_USER_IMG,
+            photoURL: USER_IMG || DEFAULT_USER_IMG, // ✅ Set default if null
           })
         );
         navigate("/browse");
@@ -41,18 +45,18 @@ const Header = () => {
   }, [dispatch, navigate]);
 
   return (
-    <div className="absolute top-0 left-0 w-full flex items-center justify-between bg-opacity-80 z-50 px-6 py-4">
-      <img src={logo} alt="logo" className="h-[60px] w-auto" />
+    <div className="fixed top-[-10px] left-0 w-full flex items-center justify-between z-50  bg-gradient-to-b from-black/80 to-transparent">
+      <img src={logo} alt="logo" className="h-[100px] w-[150px]" />
 
       {user && (
         <div className="flex items-center gap-4">
           <img
-            src={user.photoURL || DEFAULT_USER_IMG}
+            src={user.photoURL || DEFAULT_USER_IMG} // ✅ Use default if null
             alt="User Profile"
-            className="h-[40px] w-[40px] rounded-full"
+            className="h-[48px] w-[50px] rounded-full"
           />
           <button
-            className="bg-red-600 text-white px-4 py-2 rounded-md hover:bg-red-700"
+            className="bg-red-600 text-white px-4 py-2 rounded-md mr-4 hover:bg-red-700"
             onClick={handleSignOut}
           >
             Sign Out
